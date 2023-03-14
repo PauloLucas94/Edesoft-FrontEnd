@@ -216,12 +216,7 @@ b_del.place(x=195, y=340)
 def mostrar():
     global tree
     lista = mostrar_info()
-    # lista = [[1,'João','joao@mail.com', 123456789, "12/10/2022", 'Normal', 'gostaria de o consultar pessoalmente'],
-    #            [2,'Luiz', 'luiz@mail.com', 123456789, "12/13/2022", 'Normal', 'gostaria de o consultar pessoalmente'],
-    #            [3,'Mônica',  'monica@mail.com', 123456789, "12/23/2022", 'Normal', 'gostaria de o consultar pessoalmente'],
-    #            [4,'Juliana', 'juliana@mail.com', 123456789, "12/25/2022", 'Normal', 'gostaria de o consultar pessoalmente'],
-    #            [5,'Geraldo','geraldo@mail.com', 123456789, "12/28/2022", 'Normal', 'gostaria de o consultar pessoalmente']
-    #            ]
+   
 
     # lista para cabecario
     tabela_head = ['ID','Nome', 'email', 'telefone', 'Data', 'Estado', 'Sobre']

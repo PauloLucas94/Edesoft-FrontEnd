@@ -27,7 +27,7 @@ co9 = "#e9edf5"   # sky blue
 ################# criando janela ###############
 
 janela = Tk()
-janela.title("Teste Prático Front-End - Edesoft")
+janela.title("Exemplo - CRUD - Curso de Python")
 janela.geometry('1043x453')
 janela.configure(background=co9)
 janela.resizable(width=FALSE, height=FALSE)
@@ -45,7 +45,7 @@ frame_direita.grid(row=0, column=1, rowspan=2, padx=1, pady=1, sticky=NSEW)
 
 ################# rotulo cima ###############
 
-app_nome = Label(frame_cima, text= 'Cadastro de Usuários - Edesoft', anchor=NW, font=('Ivy 13 bold'), bg=co2, fg=co1, relief='flat')
+app_nome = Label(frame_cima, text= 'Cadastro de Alunos', anchor=NW, font=('Ivy 13 bold'), bg=co2, fg=co1, relief='flat')
 app_nome.place(x=10, y=20)
 
 #variaveis globais
@@ -67,7 +67,7 @@ def inserir():
         messagebox.showerror('Erro', 'Insira um nome válido')
     else:
         inserir_info(lista)
-        messagebox.showinfo('Sucesso', 'Os dados foram inseridos com sucesso!')
+        messagebox.showinfo('Sucesso', 'As Info. foram inseridos na DB!')
 
         e_nome.delete(0, 'end')
         e_email.delete(0, 'end')
@@ -118,7 +118,7 @@ def atualizar():
                 messagebox.showerror('Erro', 'Insira um nome válido')
             else:
                 atualizar_info(lista)
-                messagebox.showinfo('Sucesso', 'Os dados foram atualizados com sucesso!')
+                messagebox.showinfo('Sucesso', 'As Info. foram atualizadas na DB!')
 
                 e_nome.delete(0, 'end')
                 e_email.delete(0, 'end')
@@ -150,7 +150,7 @@ def deletar():
 
         valor_id = [tree_lista[0]]
         deletar_info(valor_id)
-        messagebox.showinfo('Sucesso', 'Os dados foram apagados com sucesso!')
+        messagebox.showinfo('Sucesso', 'As Info. foram apagadas da DB!')
 
         for widget in frame_direita.winfo_children():
             widget.destroy()
@@ -183,13 +183,13 @@ e_telefone = Entry(frame_baixo, width=45, justify='left', relief='solid')
 e_telefone.place(x=15, y=160)
 
 #data da consulta
-l_cal = Label(frame_baixo, text= 'Data da Entrevista *', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4, relief='flat')
+l_cal = Label(frame_baixo, text= 'Data do Cadastro *', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4, relief='flat')
 l_cal.place(x=15, y=190)
 e_cal = DateEntry(frame_baixo, width=12, background='darkblue', foreground='white', borderwidth=2, year=2023)
 e_cal.place(x=15, y=220)
 
 #estado
-l_estado = Label(frame_baixo, text= 'Tipo de Entrevista *', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4, relief='flat')
+l_estado = Label(frame_baixo, text= 'Nota do Semestre *', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4, relief='flat')
 l_estado.place(x=160, y=190)
 e_estado = Entry(frame_baixo, width=20, justify='left', relief='solid')
 e_estado.place(x=160, y=220)
@@ -216,7 +216,12 @@ b_del.place(x=195, y=340)
 def mostrar():
     global tree
     lista = mostrar_info()
-   
+    # lista = [[1,'João','joao@mail.com', 123456789, "12/10/2022", 'Normal', 'gostaria de o consultar pessoalmente'],
+    #            [2,'Luiz', 'luiz@mail.com', 123456789, "12/13/2022", 'Normal', 'gostaria de o consultar pessoalmente'],
+    #            [3,'Mônica',  'monica@mail.com', 123456789, "12/23/2022", 'Normal', 'gostaria de o consultar pessoalmente'],
+    #            [4,'Juliana', 'juliana@mail.com', 123456789, "12/25/2022", 'Normal', 'gostaria de o consultar pessoalmente'],
+    #            [5,'Geraldo','geraldo@mail.com', 123456789, "12/28/2022", 'Normal', 'gostaria de o consultar pessoalmente']
+    #            ]
 
     # lista para cabecario
     tabela_head = ['ID','Nome', 'email', 'telefone', 'Data', 'Estado', 'Sobre']

@@ -11,7 +11,7 @@ import sqlite3 as lite
 #criando conexão com o db
 conn = lite.connect('dados.db')
 
-#lista=['Paulo','joao@mail.com', 123456789, "12/10/2022", 'Normal', 'gostaria de uma consulta pessoalmente']
+#lista=['Paulo','paulo@mail.com', 123456789, "12/10/2022", 'Normal', 'Aluno sem problemas de comportamento']
 
 #inserir 
 def inserir_info(i):
